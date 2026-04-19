@@ -17,6 +17,8 @@ const (
 	DialectMySQL      Dialect = database.DialectMySQL
 	DialectPostgres   Dialect = database.DialectPostgres
 	DialectRedshift   Dialect = database.DialectRedshift
+	DialectDelta      Dialect = database.DialectDelta
+	DialectIceberg    Dialect = database.DialectIceberg
 	DialectSQLite3    Dialect = database.DialectSQLite3
 	DialectSpanner    Dialect = database.DialectSpanner
 	DialectStarrocks  Dialect = database.DialectStarrocks
@@ -57,6 +59,10 @@ func SetDialect(s string) error {
 		d = DialectTiDB
 	case "clickhouse":
 		d = DialectClickHouse
+	case "delta":
+		d = DialectDelta
+	case "iceberg":
+		d = DialectIceberg
 	case "vertica":
 		d = DialectVertica
 	case "ydb":
